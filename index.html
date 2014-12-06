@@ -13,8 +13,8 @@
           <h1>News Feed</h1>
           <p>Sample page</p>  
         </div>
-        <div class="row">
-            <div class="col-lg-12">
+        <div id="feeds-container" class="row">
+            <!--<div class="col-lg-12">
                 <div class="panel panel-default">
                     <div class="panel-body">
                        <div class="row">
@@ -46,7 +46,7 @@
                            <div class="col-sm-6">
                                 <ul class="nav nav-pills">
                                     <li role="presentation" ><a href="#">like <span class="badge">42</span></a></li>
-                                    <li role="presentation" ></lirole><a href="#">share</a></li>
+                                    <li role="presentation" ><a href="#">share</a></li>
                                     <li role="presentation" ><a href="#">comment</a></li>
                                 </ul>
                                 </div>
@@ -55,11 +55,21 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div>-->
     	</div>
     </div>
-    <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
-    <script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>    
+    <script src="js/jquery-2.1.0.js"></script>
+    <!--<script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>    -->
     <script src="js/bootstrap.min.js"></script>
+    <script src="js/news-feed.js"></script>
+    
+    <script type="text/javascript">
+       /**
+        * Chamada construtor NewsFeed
+        */
+        var feed = new NewsFeed();
+        feed.init();
+
+    </script>
 </body>
 </html>
