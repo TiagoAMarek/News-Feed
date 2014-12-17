@@ -92,14 +92,18 @@ var NewsFeed = (function () {
 		return panel;
 	};
 
+	/**
+	* create a new object from NewsFeed and call the init function to create new panels
+	**/
 	NewsFeed.prototype.init = function (idContainer, data) {
 		var feedsContainer = document.getElementById(idContainer),
-			contentColumn  = document.createElement("div"),		
-			panel          = null;		
+			contentColumn  = document.createElement("div"),
+			panel          = null,
+			i              = 0;
 		
 		contentColumn.setAttribute("class", "col-lg-12");
 				
-		for(var i = 0; i < data.news.length; i++){
+		for (i = 0; i < data.news.length; i++) {
 			panel = NewsFeed.createPanel(feedsContainer, data.news[i]);
 			contentColumn.appendChild(panel);
 		}
