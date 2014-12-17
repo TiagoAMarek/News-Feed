@@ -23,6 +23,6 @@ A news feed app.
 ```
 ### Calling the app
 ```javascript
-    var feed = new NewsFeed();
-    feed.init("div id here", json);
+var feed = new NewsFeed();
+feed.init("div id here", json);
 ```
