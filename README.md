@@ -7,7 +7,8 @@ A news feed app.
 * jQuery, Bootstrap.
 
 ### JSON format
-``` var json = {
+```json
+{
     "news": [{
             "name": "Mario",
             "profileimage": "http://upload.wikimedia.org/wikipedia/pt/9/99/MarioSMBW.png",
@@ -19,4 +20,4 @@ A news feed app.
         ...
     ]
 }
-    ```
+```
