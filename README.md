@@ -3,5 +3,5 @@ News-Feed
 
 A news feed app.
 
-## Dependencies
+### Dependencies
 jQuery, Bootstrap.
