@@ -5,7 +5,6 @@
 var NewsFeed = (function () {
 	'use strict';
 	var NewsFeed = function () {};
-	
 	/**
 	* Body content of the panel
 	*/
@@ -26,13 +25,14 @@ var NewsFeed = (function () {
 		rightColumn.setAttribute("class", "col-sm-11");
 		thumbnail.setAttribute("class", "thumbnail");
 		profileImg.setAttribute("class", "prof-img");
+		profileImg.setAttribute("src", data.profileimage);
 		rowProfName.setAttribute("class", "row");
 		rowTitle.setAttribute("class", "row");
 		rowText.setAttribute("class", "row");
 
-		rowProfName.innerHTML = "<span>Tiago A. Marek</span><span class='pull-right date-time'>dd/MM/yyyy - hh:mm</span>";
-		title.innerHTML = "<h4>Post your title here!</h4>";
-		text.innerHTML = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.";
+		rowProfName.innerHTML = "<span>"+data.name+"</span><span class='pull-right date-time'>"+data.datetime+"</span>";
+		title.innerHTML = "<h4>"+data.title+"</h4>";
+		text.innerHTML = "<p>"+data.text+"</p>";
 
 		thumbnail.appendChild(profileImg);
 		leftColumn.appendChild(thumbnail);
@@ -60,7 +60,7 @@ var NewsFeed = (function () {
 		row.setAttribute("class", "row");
 		column.setAttribute("class", "col-sm-6");
 		socialList.setAttribute("class", "nav nav-pills");
-		likes.innerHTML = "<a href='#'>like <span class='badge'>42</span></a>";
+		likes.innerHTML = "<a href='#'>like <span class='badge'>"+data.likes+"</span></a>";
 		share.innerHTML = "<a href='#'>share</a>";
 		comment.innerHTML = "<a href='#'>comment</a>";
 
@@ -77,36 +77,33 @@ var NewsFeed = (function () {
 	* Start the creation of the panel
 	*/
 	NewsFeed.createPanel = function (feedsContainer, data) {
-		console.log("AQUI");
 		var	panel          = document.createElement("div"),
 			panelBody      = document.createElement("div"),
 			panelFooter    = document.createElement("div");
 
 		panel.setAttribute("class", "panel panel-default");
 		panelBody.setAttribute("class", "panel-body");
-		panelBody.appendChild(createPanelBody(data));
+		panelBody.appendChild(NewsFeed.createPanelBody(data));
 		panelFooter.setAttribute("class", "panel-footer");
-		panelFooter.appendChild(createPanelFooter(data));
+		panelFooter.appendChild(NewsFeed.createPanelFooter(data));
 		panel.appendChild(panelBody);
 		panel.appendChild(panelFooter);
 
 		return panel;
 	};
 
-	NewsFeed.prototype.init = function (idContainer) {
+	NewsFeed.prototype.init = function (idContainer, data) {
 		var feedsContainer = document.getElementById(idContainer),
-			contentColumn  = document.createElement("div");
-
-		$.ajax({
-			url: "feed.json",
-			dataType: 'json',
-			crossDomain: true,
-			success: function (data) {
-				var panel = createPanel(feedsContainer, data);
-			}
-		});
+			contentColumn  = document.createElement("div"),		
+			panel          = null;		
+		
 		contentColumn.setAttribute("class", "col-lg-12");
-		contentColumn.appendChild(panel);
+				
+		for(var i = 0; i < data.news.length; i++){
+			panel = NewsFeed.createPanel(feedsContainer, data.news[i]);
+			contentColumn.appendChild(panel);
+		}
+		
 		feedsContainer.appendChild(contentColumn);
 	};
 	return NewsFeed;

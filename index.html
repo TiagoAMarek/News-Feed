@@ -64,11 +64,33 @@
     <script src="js/news-feed.js"></script>
     
     <script type="text/javascript">
-       /**
+    
+        var json = {
+            "news": [
+                {
+                    "name": "Tiago A. Marek",
+                    "profileimage": "https://fbcdn-profile-a.akamaihd.net/hprofile-ak-xpf1/v/t1.0-1/p160x160/1779874_755007767903867_2006640705217170687_n.jpg?oh=965aa464a9d7fb64358fe197c517aa99&oe=54D90840&__gda__=1427713071_2816ad076ac7b61edff6324b099cf85d",
+                    "title": "Post title right here!",
+                    "datetime": "26/11/2014 - 19:00",
+                    "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+                    "likes": "29"
+                },
+                {
+                    "name": "Tiago A. Marek",
+                    "profileimage": "https://fbcdn-profile-a.akamaihd.net/hprofile-ak-xpf1/v/t1.0-1/p160x160/1779874_755007767903867_2006640705217170687_n.jpg?oh=965aa464a9d7fb64358fe197c517aa99&oe=54D90840&__gda__=1427713071_2816ad076ac7b61edff6324b099cf85d",
+                    "title": "Post title right here!",
+                    "datetime": "27/11/2014 - 18:00",
+                    "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+                    "likes": "28"
+                }
+            ]
+        };
+        
+        /**
         * Chamada construtor NewsFeed
         */
         var feed = new NewsFeed();
-        feed.init("feeds-container");
+        feed.init("feeds-container", json);
 
     </script>
 </body>
