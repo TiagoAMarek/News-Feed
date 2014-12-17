@@ -6,7 +6,7 @@ var NewsFeed = (function () {
 	'use strict';
 	var NewsFeed = function () {};
 	/**
-	* Body content of the panel
+	* Panel body content
 	**/
 	NewsFeed.createPanelBody = function (data) {
 		var row         = document.createElement("div"),
@@ -47,7 +47,7 @@ var NewsFeed = (function () {
 	};
 
 	/**
-	* Footer content of the panel
+	* Panel footer content
 	**/
 	NewsFeed.createPanelFooter = function (data) {
 		var row         = document.createElement("div"),
@@ -74,7 +74,7 @@ var NewsFeed = (function () {
 	};
 
 	/**
-	* Start the creation of the panel
+	* Start panel creation
 	**/
 	NewsFeed.createPanel = function (feedsContainer, data) {
 		var	panel          = document.createElement("div"),
