@@ -9,7 +9,8 @@ A news feed app.
 ### JSON format
 ```json
 {
-    "news": [{
+    "news": [
+        {
             "name": "Mario",
             "profileimage": "profile image url",
             "title": "Title here!",
@@ -17,7 +18,6 @@ A news feed app.
             "text": "text here!",
             "likes": "29"
         },
-        ...
     ]
 }
 ```
