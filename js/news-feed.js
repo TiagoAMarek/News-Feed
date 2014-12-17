@@ -1,13 +1,13 @@
 /**
 * @author Tiago Alves Marek
-*/
+**/
 
 var NewsFeed = (function () {
 	'use strict';
 	var NewsFeed = function () {};
 	/**
 	* Body content of the panel
-	*/
+	**/
 	NewsFeed.createPanelBody = function (data) {
 		var row         = document.createElement("div"),
 			leftColumn  = document.createElement("div"),
@@ -30,7 +30,7 @@ var NewsFeed = (function () {
 		rowTitle.setAttribute("class", "row");
 		rowText.setAttribute("class", "row");
 
-		rowProfName.innerHTML = "<span>"+data.name+"</span><span class='pull-right date-time'>"+data.datetime+"</span>";
+		rowProfName.innerHTML = "<span class='prof-name'>"+data.name+"</span><span class='pull-right date-time'>"+data.datetime+"</span>";
 		title.innerHTML = "<h4>"+data.title+"</h4>";
 		text.innerHTML = "<p>"+data.text+"</p>";
 
@@ -48,7 +48,7 @@ var NewsFeed = (function () {
 
 	/**
 	* Footer content of the panel
-	*/
+	**/
 	NewsFeed.createPanelFooter = function (data) {
 		var row         = document.createElement("div"),
 			column      = document.createElement("div"),
@@ -61,12 +61,12 @@ var NewsFeed = (function () {
 		column.setAttribute("class", "col-sm-6");
 		socialList.setAttribute("class", "nav nav-pills");
 		likes.innerHTML = "<a href='#'>like <span class='badge'>"+data.likes+"</span></a>";
-		share.innerHTML = "<a href='#'>share</a>";
 		comment.innerHTML = "<a href='#'>comment</a>";
+		share.innerHTML = "<a href='#'>share</a>";
 
 		socialList.appendChild(likes);
-		socialList.appendChild(share);
 		socialList.appendChild(comment);
+		socialList.appendChild(share);
 
 		column.appendChild(socialList);
 		row.appendChild(column);
@@ -75,7 +75,7 @@ var NewsFeed = (function () {
 
 	/**
 	* Start the creation of the panel
-	*/
+	**/
 	NewsFeed.createPanel = function (feedsContainer, data) {
 		var	panel          = document.createElement("div"),
 			panelBody      = document.createElement("div"),
@@ -94,6 +94,7 @@ var NewsFeed = (function () {
 
 	/**
 	* create a new object from NewsFeed and call the init function to create new panels
+	* @params: idContainer, data
 	**/
 	NewsFeed.prototype.init = function (idContainer, data) {
 		var feedsContainer = document.getElementById(idContainer),
