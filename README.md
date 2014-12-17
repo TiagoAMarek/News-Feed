@@ -21,3 +21,8 @@ A news feed app.
     ]
 }
 ```
+### Calling the app
+```html
+    var feed = new NewsFeed();
+    feed.init("div id here", json);
+```
