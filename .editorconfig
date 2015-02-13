@@ -18,16 +18,17 @@ charset = utf-8
 indent_style = space
 indent_size = 4
 
-# Tab indentation (no size specified)
-[*.js]
-indent_style = tab
-
-# Indentation override for all JS under lib directory
-[lib/**.js]
+# Indentation override for all JS under src directory
+[src/**.js]
 indent_style = space
-indent_size = 2
+indent_size = 4
+
+# Indentation override for all JS under src directory
+[src/**.css]
+indent_style = space
+indent_size = 4
 
 # Matches the exact files either package.json or .travis.yml
 [{package.json,.travis.yml}]
 indent_style = space
-indent_size = 2
+indent_size = 4
