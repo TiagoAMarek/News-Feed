@@ -4,7 +4,7 @@ News-Feed
 A news feed app.
 
 ### Dependencies
-* jQuery, Bootstrap.
+* jQuery, Bootstrap, Grunt.
 
 ### JSON format
 ```json
